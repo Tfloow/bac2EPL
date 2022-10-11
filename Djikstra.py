@@ -1,6 +1,6 @@
 import time
 
-def dijkstra(trajets, durees, voyage):
+def djikstra(trajets, durees, voyage):
     graphe, destination, listLocation = creationGraphe(trajets, durees, voyage)
     trajet_min = [[] for _ in range(len(graphe))]
     duree_min = [float("inf") for _ in range(len(graphe))]
@@ -46,12 +46,3 @@ def creationGraphe(trajets, durees, voyage):
     return liaison, (knownLocation.index(Final[0]), knownLocation.index(Final[1])), knownLocation
 
 
-trajets = ["LIS-POR", "LIS-MAD", "POR-MAD", "MAD-BAR", "MAD-BOR", "BAR-BOR", "BAR-MAR", "BAR-LYO", "BOR-PAR", "PAR-BRU"
-    , "BRU-LUX", "PAR-LUX", "LUX-STR", "PAR-STR", "STR-LYO", "MAR-LYO", "PAR-LYO"]
-durees = [3, 10, 9, 2, 9, 6, 5, 5, 2, 1, 3, 3, 3, 3, 4, 2, 2]
-startTime = time.time()
-print(startTime)
-print(dijkstra(trajets, durees, ["BRU-LIS"]))
-print(time.sleep(1))
-print(time.time())
-print(time.time()-startTime)
